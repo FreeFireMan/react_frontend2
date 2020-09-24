@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Form from 'react-bootstrap/Form'
-import ModalWindow from "./ModalWindow";
+import {Sign} from "./Sign";
 
 function TopBar() {
     const isAuth = localStorage.getItem('token')
@@ -13,9 +13,9 @@ function TopBar() {
                 <Nav.Link href="#home">Home</Nav.Link>
             </Nav>
             <Form>
-                {isAuth || <ModalWindow label={'Sign in'}/>}
-                {isAuth || <ModalWindow label={'Sign up'}/>}
-                {isAuth && <ModalWindow label={'Sign out'}/>}
+                {isAuth || <Sign label={'sign in'}/>}
+                {isAuth || <Sign label={'sign up'}/>}
+                {isAuth && <Sign label={'sign out'}/>}
             </Form>
         </Navbar>
     )
